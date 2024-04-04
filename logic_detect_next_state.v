@@ -2,8 +2,8 @@ module logic_detect_next_state(
   input flick,
   input [4:0] current_count,
   input [2:0] current_state,
-  output reg [4:0] next_count,
-  output reg [2:0] next_state
+  output reg [4:0] next_count, // register type
+  output reg [2:0] next_state  // register type
 );
   parameter INIT = 0,
             TURN_ON_TO_15 = 1,
@@ -12,6 +12,7 @@ module logic_detect_next_state(
             TURN_OFF_TO_0 = 4,
             TURN_ON_TO_5 = 5,
             TURN_OFF_TO_0_END = 6;
+            
   always @(flick, current_count, current_state) begin
     case(current_state) 
       INIT:
@@ -23,7 +24,7 @@ module logic_detect_next_state(
           next_count = 0;
         end
       TURN_ON_TO_15:
-        if(current_count < 15) begin
+        if(current_count < 16) begin
           next_count = current_count + 1;
         end 
         else begin

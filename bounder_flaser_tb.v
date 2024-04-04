@@ -12,7 +12,7 @@ module bound_flasher_tb;
   wire [15:0] LEDs;
 
   // Instantiate the bound_flasher module
-  bound_flasher uut (
+  bound_flasher bound_flasher_01 (
     .clk(clk),
     .flick(flick),
     .rst_n(rst_n),
