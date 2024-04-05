@@ -34,7 +34,7 @@ module bound_flasher(
     end
   end
 
-  decoder_4_bits decoder_4_bits_01(  
+  decoder_5_bits decoder_5_bits_01(  
     .current_count(current_count),
     .leds(leds));
                               
