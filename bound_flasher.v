@@ -2,7 +2,7 @@ module bound_flasher(
   input clk,
   input flick,
   input rst_n,
-  output[15:0] leds
+  output[15:0] LEDs
 );
 
   reg [4:0] current_count_reg; // register type
@@ -36,6 +36,6 @@ module bound_flasher(
 
   decoder_5_bits decoder_5_bits_01(  
     .current_count(current_count),
-    .leds(leds));
+    .LEDs(LEDs));
                               
 endmodule
